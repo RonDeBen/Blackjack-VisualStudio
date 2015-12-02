@@ -18,7 +18,7 @@ namespace Blackjack
     {
         public int id { get; set; }
         public string name { get; set;  }
-        public string funds { get; set; }
+        public int funds { get; set; }
     }
 
     public class Room

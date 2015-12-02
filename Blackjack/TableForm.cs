@@ -58,8 +58,6 @@ namespace Blackjack
             handValueLabels[0] = houseValue;//house label
             handValueLabels[1] = handValue;//player1 label
 
-            Console.WriteLine(update_funds(0));
-
             this.Text = room.name;
             
             nameLabel.Text = "Welcome, "  + user.name + "!";
@@ -248,10 +246,9 @@ namespace Blackjack
             acesInHand = new bool[5];
         }
 
-        private double update_funds(int bet_result)
+        private int update_funds(int bet_result)
         {
-            user = RequestManager.UpdateFunds(user.id, bet_result);
-            return Double.Parse(user.funds);
+            return RequestManager.UpdateFunds(user.id, bet_result).funds;
         }
 
     }
